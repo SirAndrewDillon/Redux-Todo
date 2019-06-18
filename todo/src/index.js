@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import { combineReducers } from "redux";
+import todos from "./todo.reducers";
+import filterTodo from "./filter.reducers";
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+export default combineReducers({
+  todos,
+  filterTodo
+});
 
 
