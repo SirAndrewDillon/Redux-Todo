@@ -1,10 +1,23 @@
-import { combineReducers } from "redux";
-import todos from "./todo.reducers";
-import filterTodo from "./filter.reducers";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./reducers";
 
-export default combineReducers({
-  todos,
-  filterTodo
-});
+const store = createStore(rootReducer);
+
+const styles = {
+  fontFamily: "sans-serif",
+  textAlign: "center"
+};
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
+
 
 
